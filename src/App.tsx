@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // pages
@@ -7,6 +6,10 @@ import Signup from './pages/Signup'
 import Forgotpassword from './pages/Forgotpassword'
 import Home from './pages/Home'
 import Navbar from './component/Navbar';
+import * as React from "react";
+
+
+
 
 function App() {
   return (
