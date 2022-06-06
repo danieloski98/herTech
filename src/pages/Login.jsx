@@ -43,7 +43,7 @@ export default function Login() {
           <div className='relative'>
             <input type={passwordSwitch ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)}  placeholder='password' className='w-full h-10 px-8 mt-4 border-2 border-gray-500 rounded-lg' />
             <span onClick={() => setPasswordSwitch(!passwordSwitch)}
-            className='absolute bottom-0 text-right text-gray-500 right-4 top-6 left-8 font-xs cursor-pointer'>
+            className='absolute bottom-0 text-right text-gray-500 cursor-pointer right-4 top-6 left-8 font-xs'>
             show
             </span>
             </div>

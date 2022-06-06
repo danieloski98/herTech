@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom';
 import google from "../images/google.svg";
 import linkedIn from "../images/linkedIn.svg";
 
+import { db } from '../firebaseConfig.jsx';
+import { collection, addDoc, Timestamp } from 'firebase/firestore';
+
 // firebase 
 import { app } from '../firebaseConfig.jsx';
 
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider,  signInWithPopup, } from 'firebase/auth';
+
 
 export default function Signup() {
 
@@ -22,8 +26,8 @@ export default function Signup() {
     const provider = new GoogleAuthProvider();
     const auth = getAuth(app);
   
-  
     const signup = async () => {
+      
       try {
       setLoading(true); 
       const authentication = getAuth();
@@ -31,10 +35,17 @@ export default function Signup() {
       console.log(details.user);
       setUserEmail(details.user.email);
       setLoading(false);
+
+      
+      await addDoc( collection (db, "authentication2"), {
+        email :email,
+        password : password,
+        created : Timestamp.now(),
+      })
       } catch (error) {
         alert(error.message);
       }
-    }
+    };
 
     const signInWithGoogle = () => {
         signInWithPopup(auth, provider).then((result) => {
