@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 // firebase 
 import { app } from '../firebaseConfig.jsx';
@@ -17,6 +18,7 @@ export default function Login() {
 
     const [passwordSwitch, setPasswordSwitch] = useState(false);
   
+    const nav = useNavigate();
   
     const login = async () => {
       try {
@@ -26,6 +28,7 @@ export default function Login() {
       console.log(details.user);
       setUserEmail(details.user.email);
       setLoading(false);
+      nav("/")
       } catch (error) {
         alert(error.message);
       }

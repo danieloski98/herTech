@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import google from "../images/google.svg";
 import linkedIn from "../images/linkedIn.svg";
 
 import { db } from '../firebaseConfig.jsx';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
+
 
 // firebase 
 import { app } from '../firebaseConfig.jsx';
@@ -24,7 +26,9 @@ export default function Signup() {
     const [passwordSwitch, setPasswordSwitch] = useState(false);
 
     const provider = new GoogleAuthProvider();
-    const auth = getAuth(app);
+    const auth = getAuth();
+
+    const nav = useNavigate();
   
     const signup = async () => {
       
@@ -35,7 +39,7 @@ export default function Signup() {
       console.log(details.user);
       setUserEmail(details.user.email);
       setLoading(false);
-
+      nav("/")
       
       await addDoc( collection (db, "authentication2"), {
         email :email,
@@ -50,6 +54,7 @@ export default function Signup() {
     const signInWithGoogle = () => {
         signInWithPopup(auth, provider).then((result) => {
             console.log(result);
+            nav("/")
         }).catch ((error) => {
             console.log(error.message);
           });
@@ -62,11 +67,11 @@ export default function Signup() {
             <h3 className='text-2xl font-bold text-center text-black'>HerTech</h3>
             <p className='mt-2 font-medium text-center text-black text-md'>You're 1-click away from creating an account {userEmail}</p>
 
-            <input type="email"  value={email} onChange={(e) => setEmail(e.target.value)} placeholder='email address' className='w-full h-10 px-8 mt-4 border-2 border-gray-500 rounded-lg' />
+            <input type="email"  value={email} onChange={(e) => setEmail(e.target.value)} placeholder='email address' className='w-full h-10 px-4 mt-4 border-2 border-gray-500 rounded-lg' />
             <div className='relative'>
-            <input type={passwordSwitch ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)}  placeholder='password' className='w-full h-10 px-8 mt-4 border-2 border-gray-500 rounded-lg' />
+            <input type={passwordSwitch ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)}  placeholder='password' className='w-full h-10 px-4 mt-4 border-2 border-gray-500 rounded-lg' />
             <span onClick={() => setPasswordSwitch(!passwordSwitch)}
-            className='absolute bottom-0 text-right text-gray-500 right-4 top-6 left-8 font-xs cursor-pointer'>
+            className='absolute bottom-0 text-right text-gray-500 cursor-pointer right-4 top-6 left-8 font-xs'>
             show
             </span>
             </div>

@@ -11,7 +11,6 @@ export default function Forgotpassword() {
 
             <input type="email" placeholder='email address' className='w-full h-10 px-8 mt-4 border-2 border-gray-500 rounded-lg' />
 
-
             <button className='w-full h-12 mt-5 font-bold text-center text-white bg-black rounded-lg'>Reset password</button>
 
             <p className='mt-5 font-medium text-center text-gray-700'>Already have an account? 
