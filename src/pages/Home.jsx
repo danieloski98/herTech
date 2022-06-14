@@ -141,8 +141,8 @@ const clickHandler = () => {
             </div>
 
             
-            <div className='p-14 h-auto bg-gray-100'>
-            <div className="w-full  h-auto gap-3 flex bg-white rounded-2xl px-5 py-8" onClick={clickHandler} >
+            <div className='p-12 h-auto bg-gray-100'>
+            <div className="w-full  h-auto gap-3 flex bg-white rounded-2xl px-4 py-8" onClick={clickHandler} >
                           <img src={ logo1 } />
                       <div>
                         <h1 className='font-semibold text-xl'>Product Manager—Remote </h1>
@@ -161,8 +161,8 @@ const clickHandler = () => {
             </div>
             
 
-            <div className='p-14 h-auto bg-gray-100'>
-            <div className="w-full  h-auto gap-3 flex bg-gray-100 rounded-2xl px-5 py-8" onClick={clickHandler} >
+            <div className='p-12 h-auto bg-gray-100'>
+            <div className="w-full  h-auto gap-3 flex bg-gray-100 rounded-2xl px-4 py-8" onClick={clickHandler} >
                           <img src={ logo2 } />
                       <div>
                         <h1 className='font-semibold text-xl'>Data Analytics </h1>
@@ -180,8 +180,8 @@ const clickHandler = () => {
             </div>
             </div>
 
-            <div className='p-14 h-auto bg-gray-100'>
-            <div className="w-full  h-auto gap-3 flex bg-white rounded-2xl px-5 py-8" onClick={clickHandler} >
+            <div className='p-12 h-auto bg-gray-100'>
+            <div className="w-full  h-auto gap-3 flex bg-white rounded-2xl px-4 py-8" onClick={clickHandler} >
                           <img className='h-16 w-16 mt-3' src={ logo3 } />
                       <div>
                         <h1 className='font-semibold text-xl'>Product Manager—Remote </h1>
@@ -199,8 +199,8 @@ const clickHandler = () => {
             </div>
             </div>
 
-            <div className='p-14 h-auto bg-gray-100'>
-            <div className="w-full  h-auto gap-3 flex bg-white rounded-2xl px-5 py-8" onClick={clickHandler} >
+            <div className='p-12 h-auto bg-gray-100'>
+            <div className="w-full  h-auto gap-3 flex bg-white rounded-2xl px-4 py-8" onClick={clickHandler} >
                           <img src={ logo2 } />
                       <div>
                         <h1 className='font-semibold text-xl'>Data Analytics </h1>
@@ -218,8 +218,8 @@ const clickHandler = () => {
             </div>
             </div>
 
-            <div className='p-14 h-auto bg-gray-100'>
-            <div className="w-full  h-auto gap-3 flex bg-white rounded-2xl px-5 py-8" onClick={clickHandler} >
+            <div className='p-12 h-auto bg-gray-100'>
+            <div className="w-full  h-auto gap-3 flex bg-white rounded-2xl px-4 py-8" onClick={clickHandler} >
                           <img src={ logo2 } />
                       <div>
                         <h1 className='font-semibold text-xl'>Data Analytics </h1>
@@ -311,8 +311,8 @@ const clickHandler = () => {
               </div>
               <div>
                 <h2 className='text-left text-lg font-semibold text-black'>Women In Tech Q&A Series</h2>
-                <p className='text-left text-gray-700 text-sm' >Martyna Lewinska, Co-Founder and CTO at Fiat Republic</p>
-                <Button className='w-24' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>
+                <p className='text-left pb-2 text-gray-700 text-sm' >Martyna Lewinska, Co-Founder and CTO at Fiat Republic</p>
+                <Button className='w-24 ' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>
                 12mins
               </Button>
               </div>
@@ -324,8 +324,8 @@ const clickHandler = () => {
               </div>
               <div>
                 <h2 className='text-left text-lg font-semibold text-black'>Women In Tech Q&A Series</h2>
-                <p className='text-left text-gray-700 text-sm' >Martyna Lewinska, Co-Founder and CTO at Fiat Republic</p>
-                <Button className='w-24' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>
+                <p className='text-left pb-2 text-gray-700 text-sm' >Martyna Lewinska, Co-Founder and CTO at Fiat Republic</p>
+                <Button className='w-24 ' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>
                 12mins
               </Button>
               </div>
