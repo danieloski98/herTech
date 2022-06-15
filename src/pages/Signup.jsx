@@ -39,7 +39,7 @@ export default function Signup() {
       console.log(details.user);
       setUserEmail(details.user.email);
       setLoading(false);
-      nav("/")
+      nav("/job_board")
       
       await addDoc( collection (db, "authentication2"), {
         email :email,

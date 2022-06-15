@@ -13,7 +13,7 @@ export default function Footer(){
         </div>
         <div className='relative'>
             <input type='text' placeholder='Enter your email' className='w-full h-10 px-4 pb-6 pt-4 mt-4 border-2 border-gray-500 rounded-3xl' />
-            <Button className='w-28 absolute bottom-0 text-gray-500  rounded-3xl cursor-pointer right-1 -top-10 left-56 font-xs' sx={{borderRadius: 7, color: '#E4ECF7', backgroundColor: ' #3754DB',}}>
+            <Button className='w-28 absolute bottom-0 text-gray-500  rounded-3xl cursor-pointer -top-10 left-56 font-xs' sx={{borderRadius: 7, color: '#E4ECF7', backgroundColor: ' #3754DB',}}>
                 Subscribe
               </Button>
             </div>
