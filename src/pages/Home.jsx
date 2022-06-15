@@ -51,13 +51,11 @@ const clickHandler = () => {
   } else{
       nav("/signup");
   }
-
   } 
-
   
   return (
     <div className='w-full h-auto '>
-      <div className='flex w-full h-auto py-20 pl-32 bg-darkblue'>
+      <div className='flex w-full h-auto py-20 pl-20 bg-darkblue'>
         <div>
           <h1 className='font-bold leading-tight text-white text-7xl'>Hire <span className='text-[#782f99]'>female</span></h1>
           <h1 className='font-bold leading-tight text-white text-7xl'>tech-talent on <br/>demand</h1>
@@ -65,7 +63,7 @@ const clickHandler = () => {
           Lorem ipsum is placeholder text commonly used in the <br/> graphic, print, and publishing industries
           </p>
 
-          <div className='flex gap-10'>
+          <div className='flex gap-7'>
           <Button variant="contained" sx={{borderRadius: '25px',}} >Get started</Button>
           <Button variant="contained" sx={{borderRadius: '25px', backgroundColor: '#E1E8FF', color: '#3754DB', }} >See job listing</Button>
           </div>

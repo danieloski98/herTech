@@ -217,14 +217,14 @@ export default function Job_board(){
                         <p>{ elevation.company }</p>
                         <div className="flex gap-3 pt-3">
                             <img src={ elevation.mapPin} />
-                            <p className="text-sm pt-1 -ml-2"> { elevation.location} </p>
+                            <p className="text-sm pt-1 "> { elevation.location} </p>
                             <img src={ elevation.briefcase} />
-                            <p className="text-sm pt-1 -ml-2"> {elevation.job} </p>
+                            <p className="text-sm pt-1 "> {elevation.job} </p>
                             <img src={ elevation.dollarsign} />
-                            <p className="text-sm pt-1 -ml-2"> {elevation.amount} </p>
+                            <p className="text-sm pt-1 "> {elevation.amount} </p>
                         </div>
                     </div>
-                    <p className="text-right ml-36"> {elevation.time} </p>
+                    <p className="text-right ml-32"> {elevation.time} </p>
                   </div>
                 </Item>
               ))}
