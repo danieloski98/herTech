@@ -41,7 +41,7 @@ module.exports = {
       pink: colors.pink,
       rose: colors.rose,
       darkblue: '#101225',
-      blue: ' #3754DB',
+      bluee: ' #3754DB',
       background: '#F7FAFC',
    
     }),

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { getAuth } from "firebase/auth";
 
 //material UI
@@ -72,7 +73,9 @@ const clickHandler = () => {
 
          <div className='py-10 pr-10'>
             <p className='pb-1 text-3xl font-semibold text-gray-400'>100k+</p>
+            <Link to = "/Job_details">
             <p className='text-lg font-normal text-gray-400'>Job listed</p>
+            </Link>
           </div>
 
           <div className='px-2 border-l-2 border-gray-400 border-solid my-14 h-9'></div>

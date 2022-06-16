@@ -8,6 +8,7 @@ import Forgotpassword from "./pages/Forgotpassword";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Job_board from "./pages/Job_board";
+import Job_details from "./pages/Job_details";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="signup" element={<Signup />} />
       <Route path="forgotpassword" element={<Forgotpassword />} />
       <Route path="job_board" element={<Job_board />} />
+      <Route path="job_details" element={<Job_details />} />
     </Routes>
       <Footer />
   </BrowserRouter>

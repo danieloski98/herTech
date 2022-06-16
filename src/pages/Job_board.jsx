@@ -1,12 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //material UI
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import ButtonBase from '@mui/material/ButtonBase';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchIcon from '@mui/icons-material/Search';
@@ -17,15 +15,7 @@ import logo2 from "../images/2.svg";
 import mappin from "../images/map-pin.svg";
 import briefcase from "../images/briefcase.svg";
 import dollar from "../images/dollar-sign.svg";
-import searchicon from "../images/search.svg";
-import Selecticon from "../images/Select.svg";
 
-const Img = styled('img')({
-    margin: 'auto',
-    display: 'block',
-    maxWidth: '100%',
-    maxHeight: '100%',
-  });
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -210,6 +200,7 @@ export default function Job_board(){
                 dollarsign: dollar,
               }].map((elevation) => (
                 <Item key={elevation} elevation={elevation}>
+                  <Link to="/job_details">
                   <div className="flex gap-2 px-5 py-7">
                     <img src={ elevation.src } />
                     <div>
@@ -226,6 +217,7 @@ export default function Job_board(){
                     </div>
                     <p className="text-right ml-32"> {elevation.time} </p>
                   </div>
+                  </Link>
                 </Item>
               ))}
             </Box>
