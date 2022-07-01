@@ -24,7 +24,7 @@ import frame5 from "../images/Frame_31.svg";
 import frame6 from "../images/Vector_1.svg";
 import logo1 from "../images/1.svg";
 import logo2 from "../images/2.svg";
-import logo3 from "../images/linkedIn.svg"
+import logo3 from "../images/linkedIn.svg";
 import img_1 from "../images/profile_1.svg";
 import img_2 from "../images/profile_2.svg";
 import img_3 from "../images/profile_3.svg";
@@ -140,8 +140,13 @@ const clickHandler = () => {
             <div className="w-full h-auto gap-3 flex bg-white rounded-2xl px-4 py-8" onClick={clickHandler} >
                           <img src={ logo1 } />
                       <div>
-                        <h1 className='font-semibold text-base'>Product Manager—Remote </h1>
-                        <p className='text-gray-500'>Meta</p>
+                        <div className='flex justify-between'>
+                          <div>
+                          <h1 className='font-semibold text-base'>Product Manager—Remote </h1>
+                          <p className='text-gray-500'>Meta</p>
+                          </div>
+                          <p className="text-right text-gray-500 ml-32"> Posted 5mins ago</p>
+                        </div>
                         <div className="flex gap-3 pt-3">
                             <img src={ mappin} />
                             <p className="text-sm text-gray-500 pt-1 -ml-1"> USA, Remote </p>
@@ -151,7 +156,7 @@ const clickHandler = () => {
                             <p className="text-sm text-gray-500 pt-1 -ml-2">120k - 130k </p>
                         </div>
                     </div>
-                    <p className="text-right text-gray-500 ml-32"> Posted 5mins ago</p>
+                    
             </div>
             </div>
             
@@ -160,8 +165,13 @@ const clickHandler = () => {
             <div className="w-full  h-auto gap-3 flex bg-gray-100 rounded-2xl px-4 py-8" onClick={clickHandler} >
                           <img src={ logo2 } />
                       <div>
-                        <h1 className='font-semibold text-base'>Data Analytics </h1>
-                        <p className='text-gray-500'>Loom Inc.</p>
+                      <div className='flex justify-between'>
+                          <div>
+                          <h1 className='font-semibold text-base'>Data Analytics </h1>
+                          <p className='text-gray-500'>Loom Inc.</p>
+                          </div>
+                          <p className="text-right text-gray-500 ml-32">Posted 18hrs ago</p>
+                        </div>
                         <div className="flex gap-3 pt-3">
                             <img src={ mappin} />
                             <p className="text-sm pt-1 text-gray-500 -ml-1"> Australia </p>
@@ -171,7 +181,6 @@ const clickHandler = () => {
                             <p className="text-sm pt-1 text-gray-500 -ml-2">120k - 130k </p>
                         </div>
                     </div>
-                    <p className="text-right text-gray-500 ml-32">Posted 18hrs ago</p>
             </div>
             </div>
 
@@ -179,8 +188,13 @@ const clickHandler = () => {
             <div className="w-full  h-auto gap-3 flex bg-white rounded-2xl px-4 py-8" onClick={clickHandler} >
                           <img className='h-16 w-16 mt-3' src={ logo3 } />
                       <div>
-                        <h1 className='font-semibold text-base'>Product Manager—Remote </h1>
-                        <p className='text-gray-500'>Meta</p>
+                      <div className='flex justify-between'>
+                          <div>
+                          <h1 className='font-semibold text-base'>Product Manager—Remote </h1>
+                          <p className='text-gray-500'>Meta</p>
+                          </div>
+                          <p className="text-right text-gray-500 ml-32"> Posted 5mins ago</p>
+                        </div>
                         <div className="flex gap-3 pt-3">
                             <img src={ mappin} />
                             <p className="text-sm pt-1 text-gray-500 -ml-1"> USA, Remote </p>
@@ -190,7 +204,6 @@ const clickHandler = () => {
                             <p className="text-sm pt-1 text-gray-500 -ml-2">120k - 130k </p>
                         </div>
                     </div>
-                    <p className="text-right ml-32"> Posted 5mins ago</p>
             </div>
             </div>
 
@@ -198,8 +211,13 @@ const clickHandler = () => {
             <div className="w-full  h-auto gap-3 flex bg-white rounded-2xl px-4 py-8" onClick={clickHandler} >
                           <img src={ logo2 } />
                       <div>
-                        <h1 className='font-semibold text-base'>Data Analytics </h1>
-                        <p>Loom Inc.</p>
+                      <div className='flex justify-between'>
+                          <div>
+                          <h1 className='font-semibold text-base'>Data Analytics </h1>
+                          <p className='text-gray-500'>Loom Inc.</p>
+                          </div>
+                          <p className="text-right text-gray-500 ml-32">Posted 18hrs ago</p>
+                        </div>
                         <div className="flex gap-3 pt-3">
                             <img src={ mappin} />
                             <p className="text-sm pt-1 -ml-1"> Australia </p>
@@ -209,7 +227,6 @@ const clickHandler = () => {
                             <p className="text-sm pt-1 text-gray-500 -ml-2">120k - 130k </p>
                         </div>
                     </div>
-                    <p className="text-right ml-32 text-gray-500">Posted 18hrs ago</p>
             </div>
             </div>
 
@@ -217,8 +234,13 @@ const clickHandler = () => {
             <div className="w-full  h-auto gap-3 flex bg-white rounded-2xl px-4 py-8" onClick={clickHandler} >
                           <img src={ logo2 } />
                       <div>
-                        <h1 className='font-semibold text-base'>Data Analytics </h1>
-                        <p className='text-gray-500'>Loom Inc.</p>
+                      <div className='flex justify-between'>
+                          <div>
+                          <h1 className='font-semibold text-base'>Data Analytics </h1>
+                          <p className='text-gray-500'>Loom Inc.</p>
+                          </div>
+                          <p className="text-right text-gray-500 ml-32">Posted 18hrs ago</p>
+                        </div>
                         <div className="flex gap-3 pt-3">
                             <img src={ mappin} />
                             <p className="text-sm pt-1 text-gray-500 -ml-1"> Australia </p>
@@ -228,7 +250,6 @@ const clickHandler = () => {
                             <p className="text-sm pt-1 text-gray-500 -ml-2">120k - 130k </p>
                         </div>
                     </div>
-                    <p className="text-right text-gray-500 ml-32">Posted 18hrs ago</p>
             </div>
             <div className='w-full flex justify-center -mt-4 shahdow-gray-50'>
                <Button variant='contained' sx={{borderRadius: '25px', backgroundColor: ' #3754DB', color: '#E4ECF7'}} >view all job   <ArrowForwardIosIcon sx={{ fontSize: 18,}} /></Button>

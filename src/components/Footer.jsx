@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 
 export default function Footer(){
     return(
-        <div className='w-full h-auto bg-darkblue px-30 pt-20'>
+        <footer className='w-full h-auto bg-darkblue px-30 pt-20'>
         <div className='bg-white h-auto px-10 pt-10 w-4/6 m-auto rounded-xl flex justify-between'>
         <div>
           <h2 className=' text-lg font-semibold text-blue'>Newsletter</h2>
@@ -29,6 +29,6 @@ export default function Footer(){
             <p className='text-right text-gray-500 text-base'>© 2022, All Rights Reserved</p>
           </div>
         </div>
-        </div>
+        </footer>
     )
 } 

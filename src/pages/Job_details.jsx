@@ -1,5 +1,5 @@
 import React from "react";
-import meta from "../images/Logo.svg";
+import { Link } from 'react-router-dom';
 
 //material UI
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -15,6 +15,7 @@ import dollar from "../images/dollar-sign.svg";
 import logo1 from "../images/1.svg";
 import logo2 from "../images/2.svg";
 import logo3 from "../images/Logo3.svg";
+import meta from "../images/Logo.svg";
 
 export default function Job_details (){
 
@@ -67,7 +68,9 @@ export default function Job_details (){
                         <li className="text-gray-500 text-base"><CircleIcon sx={{color:'gray', fontSize:8,}} /> Optimize our app to create the best possible user experience and take YAZIO to the next level!</li>
                     </ul>
                     <div className="flex w-full gap-10 mt-10 pl-5 m-auto">
+                    <Link to = '/apply'>
                         <Button variant='contained' sx={{borderRadius: '25px', backgroundColor: ' #3754DB', color: '#E4ECF7', textTransform:'none', fontWeight:'bold'}} >Apply Now</Button>
+                    </Link>
                         <Button variant='outlined' sx={{borderRadius: '25px', backgroundColor: 'white', fontSize:13, textTransform:'none', color: '#3754DB', fontWeight:'bold'}} >Save job for later </Button>
                         
                     </div>

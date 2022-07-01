@@ -22,7 +22,7 @@ export default function Navbar() {
        <p>Find a mentor</p>
     </Link>
 
-    <Link to="/">
+    <Link to="/community">
         <p>Find a community</p>
     </Link>
 
