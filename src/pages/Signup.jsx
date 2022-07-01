@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
 
 import google from "../images/google.svg";
 import linkedIn from "../images/linkedIn.svg";
@@ -11,7 +12,6 @@ import { collection, addDoc, Timestamp } from 'firebase/firestore';
 
 // firebase 
 import { app } from '../firebaseConfig.jsx';
-
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider,  signInWithPopup, } from 'firebase/auth';
 
 
@@ -19,6 +19,7 @@ export default function Signup() {
 
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [items, setItems] = useState("");
   
     const [loading, setLoading] = React.useState(false);
     const [userEmail, setUserEmail] = React.useState('');
@@ -29,6 +30,10 @@ export default function Signup() {
     const auth = getAuth();
 
     const nav = useNavigate();
+
+    useEffect(() => {
+      localStorage.setItem('items', JSON.stringify(items));
+    }, [items]);
   
     const signup = async () => {
       

@@ -26,7 +26,9 @@ export default function Apply() {
 
             <input type="text" placeholder='LinkedIn profile link' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
 
-            <button className='w-1/2 h-12 mt-5 font-bold text-center text-white bg-bluee rounded-3xl'>Request to join</button>
+            <input type="file" placeholder='Upload Resume (PDF)' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+
+            <button className='w-1/2 h-12 mt-5 font-bold text-center text-white bg-bluee rounded-3xl'>Submit application</button>
 
         </div>
     </div>

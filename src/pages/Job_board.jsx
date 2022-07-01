@@ -52,13 +52,13 @@ export default function Job_board(){
           <Box sx={{ flexGrow: 1, paddingLeft: 10, paddingRight: 10, paddingTop: 5, }}>
     <Grid container spacing={2}>
     <Grid item xs={6}>
-        <Item>Job title <SearchIcon /> </Item>
+        <Item><input type='tex' placeholder="Job title "/><SearchIcon /> </Item>
       </Grid>
       <Grid item xs>
-        <Item>Location <KeyboardArrowDownIcon /></Item>
+        <Item><input type='text' placeholder="Location"/><KeyboardArrowDownIcon /></Item>
       </Grid>
       <Grid item xs>
-        <Item>Job type <KeyboardArrowDownIcon /></Item>
+        <Item><input type='text' placeholder="Job type"/><KeyboardArrowDownIcon /></Item>
       </Grid>
     </Grid>
   </Box>
