@@ -1,5 +1,7 @@
 import React from "react";
 
+import { TextField } from "@mui/material";
+
 export default function Apply() {
     
 
@@ -15,9 +17,9 @@ export default function Apply() {
 
             <input type="email" placeholder='Email address' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
 
-            <input type="email" placeholder='Email address' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
+            <input type="text" placeholder='+234   Phone number' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
 
-            <input type="email" placeholder='Email address' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
+            <input type="text" placeholder='Country of residence' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
 
             <div className="flex gap-2">
             <input type="text" placeholder='City' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
@@ -26,7 +28,7 @@ export default function Apply() {
 
             <input type="text" placeholder='LinkedIn profile link' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
 
-            <input type="file" placeholder='Upload Resume (PDF)' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            <input type="file" placeholder='Upload Resume (PDF)' className='w-full h-20 flex items-center justify-center pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' hidden />
 
             <button className='w-1/2 h-12 mt-5 font-bold text-center text-white bg-bluee rounded-3xl'>Submit application</button>
 

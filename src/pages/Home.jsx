@@ -20,8 +20,10 @@ import Hero_element from "../images/Hero_element.svg";
 import frame1 from "../images/Vector.svg";
 import frame2 from "../images/Frame _25.svg";
 import frame3 from "../images/Group_7.svg";
+import x from "../images/x.svg";
 import frame5 from "../images/Frame_31.svg";
 import frame6 from "../images/Vector_1.svg";
+import spacex from "../images/spacex.jpeg";
 import logo1 from "../images/1.svg";
 import logo2 from "../images/2.svg";
 import logo3 from "../images/linkedIn.svg";
@@ -66,7 +68,9 @@ const clickHandler = () => {
 
           <div className='flex gap-7'>
           <Button variant="contained" sx={{borderRadius: '25px',}} >Get started</Button>
-          <Button variant="contained" sx={{borderRadius: '25px', backgroundColor: '#E1E8FF', color: '#3754DB', }} >See job listing</Button>
+          <Link to = "/job_board">
+          <Button  sx={{borderRadius: '25px', backgroundColor: '#E1E8FF', color: '#3754DB', }} >See job listing</Button>
+          </Link>
           </div>
 
          <div className='flex'>
@@ -105,14 +109,20 @@ const clickHandler = () => {
       <div className='w-full h-auto py-12 text-center bg-white'>
             <p className='pb-10 text-lg font-normal text-gray-700'>COMPANIES HIRING ON HERTECH</p>
             <div className='flex justify-evenly'>
-            <img src={frame1}/>
-            <img src={frame2}/>
-            <img src={frame3}/>
-            <img src={frame1}/>
-            <img src={frame6}/>
-            <img src={frame1}/>
-            <img src={frame5}/>
-            <img src={frame6}/>
+            <img src={frame1} alt="logo"/>
+            <img src={frame2} alt="netflix"/>
+            <img src={frame3} alt="maxar"/>
+            <img src={frame1} alt="logo"/>
+            <div className='relative top-9'>
+            <img src={frame6} alt="spacex" className='' />
+              <img src={x} alt='x' className='absolute bottom-16 -right-3 h-4'/>
+            </div>
+            <img src={frame1} alt="logo"/>
+            <img src={frame2} alt="netflix"/>
+            <div className='relative top-9'>
+            <img src={frame6} alt="spacex" className='' />
+              <img src={x} alt='x' className='absolute bottom-16 -right-3 h-4'/>
+            </div>
             </div>
         </div>
         <div className='grid w-full h-auto grid-cols-2 gap-4 px-10 pb-10'>

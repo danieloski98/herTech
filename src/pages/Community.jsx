@@ -6,7 +6,10 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import CloseIcon from '@mui/icons-material/Close';
+import Modal from '@mui/material/Modal';
 
 //images
 import gloria from "../images/gloria.svg";
@@ -58,8 +61,24 @@ const itemData = [
     },
 ]
 
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+  borderRadius:5,
+};
+
 export default function Communities(){
 
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
     
     return(
         <div className=" w-full h-auto bg-background px-32 pb-10 pt-20">
@@ -111,9 +130,38 @@ export default function Communities(){
                         </span>
                         </div>
                         <div className="flex justify-center items-center">
-                        <Link to = '/Community_form'>
-                        <Button className='w-20' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>Join</Button>
-                        </Link>
+                        <div>
+      <Button onClick={handleOpen} className='w-20' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>Join</Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+            
+            <div className="flex justify-end">
+            <Link to ="/community">
+              <CloseIcon/>
+              </Link>
+            </div>
+            
+            <h3 className='text-2xl font-bold pb-5 text-center text-black'>Join a  community</h3>
+
+            <div className="flex gap-2">
+            <input type="email" placeholder='First Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            <input type="email" placeholder='Last Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            </div>
+
+            <input type="email" placeholder='Email address' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
+
+            <div className="flex justify-center items-center">
+            <button className='w-1/2 h-12 mt-5 font-bold text-center  text-white bg-bluee rounded-3xl'>Request to join</button>
+            </div>
+            
+        </Box>
+      </Modal>
+    </div>
                         </div>
                        </div>
                   </div>
@@ -132,9 +180,38 @@ export default function Communities(){
                         </span>
                         </div>
                         <div className="flex justify-center items-center">
-                        <Link to = '/Community_form'>
-                        <Button className='w-20' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>Join</Button>
-                        </Link>
+                        <div>
+      <Button onClick={handleOpen} className='w-20' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>Join</Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+            
+            <div className="flex justify-end">
+            <Link to ="/community">
+              <CloseIcon/>
+              </Link>
+            </div>
+            
+            <h3 className='text-2xl font-bold pb-5 text-center text-black'>Join a  community</h3>
+
+            <div className="flex gap-2">
+            <input type="email" placeholder='First Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            <input type="email" placeholder='Last Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            </div>
+
+            <input type="email" placeholder='Email address' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
+
+            <div className="flex justify-center items-center">
+            <button className='w-1/2 h-12 mt-5 font-bold text-center  text-white bg-bluee rounded-3xl'>Request to join</button>
+            </div>
+            
+        </Box>
+      </Modal>
+    </div>
                         </div>
                        </div>
                   </div>
@@ -153,9 +230,38 @@ export default function Communities(){
                         </span>
                         </div>
                         <div className="flex justify-center items-center">
-                        <Link to ='/Community_form'>
-                        <Button className='w-20' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>Join</Button>
-                        </Link>
+                        <div>
+      <Button onClick={handleOpen} className='w-20' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>Join</Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+            
+            <div className="flex justify-end">
+            <Link to ="/community">
+              <CloseIcon/>
+              </Link>
+            </div>
+            
+            <h3 className='text-2xl font-bold pb-5 text-center text-black'>Join a  community</h3>
+
+            <div className="flex gap-2">
+            <input type="email" placeholder='First Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            <input type="email" placeholder='Last Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            </div>
+
+            <input type="email" placeholder='Email address' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
+
+            <div className="flex justify-center items-center">
+            <button className='w-1/2 h-12 mt-5 font-bold text-center  text-white bg-bluee rounded-3xl'>Request to join</button>
+            </div>
+            
+        </Box>
+      </Modal>
+    </div>
                         </div>
                        </div>
                   </div>
@@ -177,9 +283,38 @@ export default function Communities(){
                         </span>
                         </div>
                         <div className="flex justify-center items-center">
-                        <Link to = '/Community_form'>
-                        <Button className='w-20' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>Join</Button>
-                        </Link>
+                        <div>
+      <Button onClick={handleOpen} className='w-20' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>Join</Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+            
+            <div className="flex justify-end">
+            <Link to ="/community">
+              <CloseIcon/>
+              </Link>
+            </div>
+            
+            <h3 className='text-2xl font-bold pb-5 text-center text-black'>Join a  community</h3>
+
+            <div className="flex gap-2">
+            <input type="email" placeholder='First Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            <input type="email" placeholder='Last Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            </div>
+
+            <input type="email" placeholder='Email address' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
+
+            <div className="flex justify-center items-center">
+            <button className='w-1/2 h-12 mt-5 font-bold text-center  text-white bg-bluee rounded-3xl'>Request to join</button>
+            </div>
+            
+        </Box>
+      </Modal>
+    </div>
                         </div>
                        </div>
                   </div>
@@ -199,9 +334,38 @@ export default function Communities(){
                         </div>
                         
                         <div className="flex justify-center items-center">
-                        <Link to = '/Community_form'>
-                        <Button className='w-20' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>Join</Button>
-                        </Link>
+                        <div>
+      <Button onClick={handleOpen} className='w-20' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>Join</Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+            
+            <div className="flex justify-end">
+            <Link to ="/community">
+              <CloseIcon/>
+              </Link>
+            </div>
+            
+            <h3 className='text-2xl font-bold pb-5 text-center text-black'>Join a  community</h3>
+
+            <div className="flex gap-2">
+            <input type="email" placeholder='First Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            <input type="email" placeholder='Last Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            </div>
+
+            <input type="email" placeholder='Email address' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
+
+            <div className="flex justify-center items-center">
+            <button className='w-1/2 h-12 mt-5 font-bold text-center  text-white bg-bluee rounded-3xl'>Request to join</button>
+            </div>
+            
+        </Box>
+      </Modal>
+    </div>
                         </div>
                       
                        </div>
@@ -221,9 +385,38 @@ export default function Communities(){
                         </span>
                         </div>
                         <div className="flex justify-center items-center">
-                        <Link to = '/Community_form'>
-                        <Button className='w-20' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>Join</Button>
-                        </Link>
+                        <div>
+      <Button onClick={handleOpen} className='w-20' sx={{borderRadius: 7, color: '#3754DB', backgroundColor: '#E4ECF7',}}>Join</Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+            
+            <div className="flex justify-end">
+            <Link to ="/community">
+              <CloseIcon/>
+              </Link>
+            </div>
+            
+            <h3 className='text-2xl font-bold pb-5 text-center text-black'>Join a  community</h3>
+
+            <div className="flex gap-2">
+            <input type="email" placeholder='First Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            <input type="email" placeholder='Last Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            </div>
+
+            <input type="email" placeholder='Email address' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
+
+            <div className="flex justify-center items-center">
+            <button className='w-1/2 h-12 mt-5 font-bold text-center  text-white bg-bluee rounded-3xl'>Request to join</button>
+            </div>
+            
+        </Box>
+      </Modal>
+    </div>
                         </div>
                        </div>
                   </div>

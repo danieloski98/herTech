@@ -9,6 +9,7 @@ import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchIcon from '@mui/icons-material/Search';
 
+
 //images
 import logo1 from "../images/1.svg";
 import logo2 from "../images/2.svg";
@@ -39,6 +40,8 @@ const Item = styled(Paper)(({ theme }) => ({
   const lightTheme = createTheme({ palette: { mode: 'light' } });
 
 export default function Job_board(){
+
+  
 
     return(
         <div className=' w-full h-auto bg-background flex px-10 pb-10 pt-10'>

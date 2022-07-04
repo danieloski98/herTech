@@ -7,6 +7,9 @@ import CircleIcon from '@mui/icons-material/Circle';
 import Button from '@mui/material/Button';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { grey } from "@mui/material/colors";
+import CloseIcon from '@mui/icons-material/Close';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 
 //images
 import mappin from "../images/map-pin.svg";
@@ -17,7 +20,25 @@ import logo2 from "../images/2.svg";
 import logo3 from "../images/Logo3.svg";
 import meta from "../images/Logo.svg";
 
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+    borderRadius:5,
+  };
+
 export default function Job_details (){
+
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     return(
         <div className=" w-full h-auto">
@@ -68,9 +89,51 @@ export default function Job_details (){
                         <li className="text-gray-500 text-base"><CircleIcon sx={{color:'gray', fontSize:8,}} /> Optimize our app to create the best possible user experience and take YAZIO to the next level!</li>
                     </ul>
                     <div className="flex w-full gap-10 mt-10 pl-5 m-auto">
-                    <Link to = '/apply'>
-                        <Button variant='contained' sx={{borderRadius: '25px', backgroundColor: ' #3754DB', color: '#E4ECF7', textTransform:'none', fontWeight:'bold'}} >Apply Now</Button>
-                    </Link>
+                    <div>
+      <Button onClick={handleOpen} variant='contained' sx={{borderRadius: '25px', backgroundColor: ' #3754DB', color: '#E4ECF7', textTransform:'none', fontWeight:'bold'}} >Apply Now</Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+            
+            <div className="flex justify-end">
+            <Link to ="/job_details">
+              <CloseIcon/>
+              </Link>
+            </div>
+            
+            <h3 className='text-2xl font-bold pb-5 text-center text-black'>Apply</h3>
+
+            <div className="flex gap-2">
+            <input type="email" placeholder='First Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            <input type="email" placeholder='Last Name' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            </div>
+
+            <input type="email" placeholder='Email address' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
+
+            <input type="text" placeholder='+234   Phone number' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
+
+            <input type="text" placeholder='Country of residence' className='w-full h-10 pl-2 text-left mt-4 border-2 border-gray-500 rounded-lg' />
+
+            <div className="flex gap-2">
+            <input type="text" placeholder='City' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            <input type="number" placeholder='Postal code' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+            </div>
+
+            <input type="text" placeholder='LinkedIn profile link' className='w-full h-10 pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' />
+
+            <input type="file" placeholder='Upload Resume (PDF)' className='w-full h-20 flex items-center justify-center pl-2 mt-4 border-2 text-left border-gray-500 rounded-lg' hidden />
+
+            <div className="flex justify-center">
+            <button className='w-1/2 h-12 mt-5 font-bold text-center text-white bg-bluee rounded-3xl'>Submit application</button>
+            </div>
+            
+        </Box>
+      </Modal>
+    </div>
                         <Button variant='outlined' sx={{borderRadius: '25px', backgroundColor: 'white', fontSize:13, textTransform:'none', color: '#3754DB', fontWeight:'bold'}} >Save job for later </Button>
                         
                     </div>
