@@ -30,6 +30,8 @@ export default function Signup() {
     if (signup.user) {
       setLoggedIn(true);
       setLoading(false);
+      localStorage.setItem('loggedin', 'true');
+      localStorage.setItem('user', JSON.stringify(signup.user));
       alert(`Your just signed in with email ${signup.user.email}`)
       navigate('/');
     } else {
@@ -46,14 +48,19 @@ export default function Signup() {
     const provider = new GoogleAuthProvider();
     const signin = await signInWithPopup(auth, provider);
 
-    if (signin.user) {
-      setLoggedIn(true);
-      setLoading(false);
-      alert(`Your just signed in with email ${signin.user.email}`)
-      navigate('/');
-    } else {
-      alert('Sign up failed');
-      setLoading(false);
+    try {
+      if (signin.user) {
+        setLoggedIn(true);
+        localStorage.setItem('loggedin', 'true');
+        localStorage.setItem('user', JSON.stringify(signin.user));
+        alert(`Your just signed in with email ${signin.user.email}`)
+        navigate('/');
+      } else {
+        alert('Sign up failed');
+        setLoading(false);
+      }
+    } catch (error: any) {
+      alert(error.message);
     }
   }
 
@@ -81,7 +88,7 @@ export default function Signup() {
 
         <p className=' text-xs font-light mt-2 text-center'>OR</p>
 
-        <div onClick={signinWithGoogle} className="w-full h-10 flex justify-center items-center bg-gray-200 rounded-xl mt-4">
+        <div onClick={signinWithGoogle} className="w-full h-10 flex justify-center items-center bg-gray-200 rounded-xl mt-4 cursor-pointer">
           <FaGoogle color="red" size={25} />
           <p className=' text-xs font-light text-center ml-2'>Continue with Google</p>
         </div>

@@ -19,8 +19,8 @@ export default function Home() {
   }, [])
 
   React.useEffect(() => {
-    const loggedIn = localStorage.getItem('isLoggedIn');
-    if (loggedIn === null) {
+    const loggedIn = localStorage.getItem('loggedin');
+    if (loggedIn === null || loggedIn === 'false') {
       setLoggedIn(false);
     } else {
       setLoggedIn(true);

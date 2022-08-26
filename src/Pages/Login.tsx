@@ -1,12 +1,9 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
-import { FaGoogle } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../firebase.config'
 import {
   signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut
 } from "firebase/auth";
 import { IsloggedIn } from '../states/isLoggedInt';
 import { useRecoilState } from 'recoil'
@@ -17,6 +14,7 @@ export default function Login() {
   const [password, setPassword] = React.useState('');
   const [loading, setLoading] = React.useState(false)
   const [_, setLoggedIn] = useRecoilState(IsloggedIn);
+
 
   const handlelogin =  async() => {
     if (email.length < 3 || password.length < 8) {
@@ -30,6 +28,8 @@ export default function Login() {
     if (signup.user) {
       setLoggedIn(true);
       setLoading(false);
+      localStorage.setItem('loggedin', 'true');
+      localStorage.setItem('user', JSON.stringify(signup.user));
       alert(`Your just signed in with email ${signup.user.email}`)
       navigate('/');
     } else {
