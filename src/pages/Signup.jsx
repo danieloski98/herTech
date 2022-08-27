@@ -45,6 +45,12 @@ export default function Signup() {
       setLoggedIn(true);
       setUserEmail(details.user.email);
       setLoading(false);
+
+      window.LOU.identify(email, {
+        company: 'Hertechtrail', // Replace this object with any user data for defining segments
+        permissions: 'admin',
+        plan: 'premium',
+      })
       
       
       await addDoc( collection (db, "authentication2"), {
