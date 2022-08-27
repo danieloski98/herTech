@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
+import { LoggedIn } from '../states/loggedin'
+import { useRecoilState } from 'recoil'
 
 import google from "../images/google.svg";
 import linkedIn from "../images/linkedIn.svg";
 
-import { db } from '../firebaseConfig.jsx';
+import { db, app, auth } from '../firebaseConfig';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 
-
-// firebase 
-import { app } from '../firebaseConfig.jsx';
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider,  signInWithPopup, } from 'firebase/auth';
 
 
@@ -25,6 +24,7 @@ export default function Signup() {
     const [userEmail, setUserEmail] = React.useState('');
 
     const [passwordSwitch, setPasswordSwitch] = useState(false);
+    const [loggedIn, setLoggedIn] = useRecoilState(LoggedIn);
 
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
@@ -39,18 +39,20 @@ export default function Signup() {
       
       try {
       setLoading(true); 
-      const authentication = getAuth();
-      const details = await createUserWithEmailAndPassword(authentication, email, password);
+      const details = await createUserWithEmailAndPassword(auth, email, password);
       console.log(details.user);
+      localStorage.setItem('user', JSON.stringify(details.user));
+      setLoggedIn(true);
       setUserEmail(details.user.email);
       setLoading(false);
-      nav("/job_board")
+      
       
       await addDoc( collection (db, "authentication2"), {
         email :email,
         password : password,
         created : Timestamp.now(),
       })
+      nav("/")
       } catch (error) {
         alert(error.message);
       }
@@ -59,6 +61,8 @@ export default function Signup() {
     const signInWithGoogle = () => {
         signInWithPopup(auth, provider).then((result) => {
             console.log(result);
+            localStorage.setItem('user', JSON.stringify(result.user));
+            setLoggedIn(true);
             nav("/")
         }).catch ((error) => {
             console.log(error.message);
@@ -83,14 +87,15 @@ export default function Signup() {
 
 
             <button onClick={signup}  className='w-full h-12 mt-5 font-bold text-center text-white bg-black rounded-lg'>
-            {!loading && 'Login to HerTech'}
+            {!loading && 'Signup'}
             {loading && 'Loading...'}
             </button>
 
             <p className='mt-5 text-lg font-light text-center text-gray-600'>OR</p>
 
             <button onClick={signInWithGoogle} className='flex items-center justify-center w-full h-12 mt-3 font-medium text-center text-black bg-gray-200 rounded-lg '> <img src={google} alt='google-icon' className='p-3 ' /> Continue with Google</button>
-            <button className='flex items-center justify-center w-full h-12 mt-3 mb-5 font-medium text-black bg-gray-200 rounded-lg'><img src={linkedIn} alt='linkedIn-icon' className='p-3'/> Continue with LinkedIn</button>
+
+            {/* <button className='flex items-center justify-center w-full h-12 mt-3 mb-5 font-medium text-black bg-gray-200 rounded-lg'><img src={linkedIn} alt='linkedIn-icon' className='p-3'/> Continue with LinkedIn</button> */}
 
 
             <p className='mt-5 mb-5 font-medium text-center text-gray-700'>Already have an account? 

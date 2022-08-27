@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { LoggedIn } from '../states/loggedin'
+import { useRecoilState } from 'recoil'
 
 // firebase 
-import { app } from '../firebaseConfig.jsx';
+import { app, auth } from '../firebaseConfig';
 
 import { getAuth, signInWithEmailAndPassword, } from 'firebase/auth'
 
@@ -17,16 +19,17 @@ export default function Login() {
     const [userEmail, setUserEmail] = React.useState('');
 
     const [passwordSwitch, setPasswordSwitch] = useState(false);
+    const [loggedIn, setLoggedIn] = useRecoilState(LoggedIn);
   
     const nav = useNavigate();
   
     const login = async () => {
       try {
       setLoading(true); 
-      const authentication = getAuth();
-      const details = await signInWithEmailAndPassword(authentication, email, password);
+      const details = await signInWithEmailAndPassword(auth, email, password);
       console.log(details.user);
       setUserEmail(details.user.email);
+      setLoggedIn(true);
       setLoading(false);
       nav("/")
       } catch (error) {

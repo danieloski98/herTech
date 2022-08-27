@@ -1,7 +1,9 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import { getAuth } from "firebase/auth";
+import { getAuth, get } from "firebase/auth";
+import { LoggedIn } from '../states/loggedin';
+import { useRecoilState } from 'recoil'
 
 //material UI
 import Button from '@mui/material/Button';
@@ -44,6 +46,18 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function Home() {
+  const [isl, setl] = useRecoilState(LoggedIn);
+
+  React.useEffect(() => {
+    const auth = getAuth();
+    const user = auth.currentUser
+
+    if (user === null) {
+      setl(false);
+    } else {
+      setl(true);
+    }
+  });
 
   const nav = useNavigate();
   const auth = getAuth();
@@ -67,9 +81,11 @@ const clickHandler = () => {
           </p>
 
           <div className='flex gap-7'>
-          <Button variant="contained" sx={{borderRadius: '25px',}} >Get started</Button>
+          <Link to="/signup">
+            <Button variant="contained" sx={{borderRadius: '25px', fontSize: '14px'}} >Get started</Button>
+          </Link>
           <Link to = "/job_board">
-          <Button  sx={{borderRadius: '25px', backgroundColor: '#E1E8FF', color: '#3754DB', }} >See job listing</Button>
+          <Button  sx={{borderRadius: '25px', backgroundColor: '#E1E8FF', color: '#3754DB', fontSize: '14px' }} >See job listing</Button>
           </Link>
           </div>
 
